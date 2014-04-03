@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com)-strip-json-comments [![Build Status](https://secure.travis-ci.org/sindresorhus/gulp-strip-json-comments.png?branch=master)](http://travis-ci.org/sindresorhus/gulp-strip-json-comments)
+# [gulp](http://gulpjs.com)-strip-json-comments [![Build Status](https://travis-ci.org/sindresorhus/gulp-strip-json-comments.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-strip-json-comments)
 
 > Strip comments from JSON with [strip-json-comments](https://github.com/sindresorhus/strip-json-comments)  
 > Lets you use comments in your JSON files!
@@ -6,14 +6,12 @@
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-strip-json-comments)
-
-```
-npm install --save-dev gulp-strip-json-comments
+```bash
+$ npm install --save-dev gulp-strip-json-comments
 ```
 
 
-## Example
+## Usage
 
 ```js
 var gulp = require('gulp');
@@ -29,4 +27,4 @@ gulp.task('default', function () {
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
