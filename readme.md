@@ -18,7 +18,7 @@ var gulp = require('gulp');
 var stripJsonComments = require('gulp-strip-json-comments');
 
 gulp.task('default', function () {
-	gulp.src('src/config.json')
+	return gulp.src('src/config.json')
 		.pipe(stripJsonComments())
 		.pipe(gulp.dest('dist'));
 });
