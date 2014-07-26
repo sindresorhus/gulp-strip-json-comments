@@ -18,7 +18,7 @@ module.exports = function () {
 		try {
 			file.contents = new Buffer(stripJsonComments(file.contents.toString()));
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-strip-json-comments', err));
+			this.emit('error', new gutil.PluginError('gulp-strip-json-comments', err, {fileName: file.path}));
 		}
 
 		this.push(file);

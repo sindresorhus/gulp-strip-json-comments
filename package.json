@@ -37,9 +37,9 @@
     "environment"
   ],
   "dependencies": {
-    "gulp-util": "~2.2.0",
-    "through2": "~0.4.0",
-    "strip-json-comments": "~0.1.1"
+    "gulp-util": "^3.0.0",
+    "strip-json-comments": "^1.0.0",
+    "through2": "^0.5.1"
   },
   "devDependencies": {
     "mocha": "*"
