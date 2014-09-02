@@ -6,22 +6,19 @@ var stripJsonComments = require('strip-json-comments');
 module.exports = function () {
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
-			this.push(file);
-			return cb();
+			cb(null, file);
 		}
 
 		if (file.isStream()) {
-			this.emit('error', new gutil.PluginError('gulp-strip-json-comments', 'Streaming not supported'));
-			return cb();
+			cb(new gutil.PluginError('gulp-strip-json-comments', 'Streaming not supported'));
+			return;
 		}
 
 		try {
 			file.contents = new Buffer(stripJsonComments(file.contents.toString()));
+			cb(null, file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-strip-json-comments', err, {fileName: file.path}));
+			cb(new gutil.PluginError('gulp-strip-json-comments', err, {fileName: file.path}));
 		}
-
-		this.push(file);
-		cb();
 	});
 };

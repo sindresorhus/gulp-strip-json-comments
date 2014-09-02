@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var gutil = require('gulp-util');
-var stripJsonComments = require('./index');
+var stripJsonComments = require('./');
 
 it('should strip JSON comments', function (cb) {
 	var stream = stripJsonComments();
