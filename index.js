@@ -16,9 +16,11 @@ module.exports = function () {
 
 		try {
 			file.contents = new Buffer(stripJsonComments(file.contents.toString()));
-			cb(null, file);
+			this.push(file);
 		} catch (err) {
-			cb(new gutil.PluginError('gulp-strip-json-comments', err, {fileName: file.path}));
+			this.emit('error', new gutil.PluginError('gulp-strip-json-comments', err, {fileName: file.path}));
 		}
+
+		cb();
 	});
 };
