@@ -7,7 +7,7 @@ it('should strip JSON comments', function (cb) {
 	var stream = stripJsonComments();
 
 	stream.on('data', function (file) {
-		assert.equal(file.contents.toString(), '\n{"a":"b"}');
+		assert.equal(file.contents.toString(), '         \n{"a":"b"}');
 		cb();
 	});
 
