@@ -4,8 +4,6 @@ var through = require('through2');
 var stripJsonComments = require('strip-json-comments');
 
 module.exports = function (options) {
-	console.log ("development strip json");
-	console.log ("options: ", options);
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			cb(null, file);
