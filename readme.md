@@ -24,6 +24,26 @@ gulp.task('default', function () {
 });
 ```
 
+### Options
+
+You can set the configuration to strip comments and their equivalent whitespace instead of replacing them with whitespace (which is the default).
+
+[Strip-json-comments whitespace option](https://github.com/sindresorhus/strip-json-comments#options)  
+
+```js
+var gulp = require('gulp');
+var stripJsonComments = require('gulp-strip-json-comments');
+
+const strippingOptions = {whitespace: false};
+
+gulp.task('default', function () {
+	return gulp.src('src/config.json')
+		.pipe(stripJsonComments(strippingOptions))
+		.pipe(gulp.dest('dist'));
+});
+```
+
+
 
 ## License
 
