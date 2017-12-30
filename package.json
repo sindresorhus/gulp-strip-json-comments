@@ -1,49 +1,49 @@
 {
-	"name": "gulp-strip-json-comments",
-	"version": "2.1.0",
-	"description": "Strip comments from JSON. Lets you use comments in your JSON files!",
-	"license": "MIT",
-	"repository": "sindresorhus/gulp-strip-json-comments",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=4"
-	},
-	"scripts": {
-		"test": "xo && ava"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"gulpplugin",
-		"json",
-		"strip",
-		"remove",
-		"delete",
-		"trim",
-		"comments",
-		"multiline",
-		"parse",
-		"config",
-		"configuration",
-		"conf",
-		"settings",
-		"util",
-		"env",
-		"environment"
-	],
-	"dependencies": {
-		"plugin-error": "^0.1.2",
-		"strip-json-comments": "^2.0.0",
-		"through2": "^2.0.0"
-	},
-	"devDependencies": {
-		"ava": "*",
-		"vinyl": "^2.1.0",
-		"xo": "*"
-	}
+  "name": "gulp-strip-json-comments",
+  "version": "3.0.0",
+  "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+  "license": "MIT",
+  "repository": "sindresorhus/gulp-strip-json-comments",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "json",
+    "strip",
+    "remove",
+    "delete",
+    "trim",
+    "comments",
+    "multiline",
+    "parse",
+    "config",
+    "configuration",
+    "conf",
+    "settings",
+    "util",
+    "env",
+    "environment"
+  ],
+  "dependencies": {
+    "plugin-error": "^0.1.2",
+    "strip-json-comments": "^2.0.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "vinyl": "^2.1.0",
+    "xo": "*"
+  }
 }
