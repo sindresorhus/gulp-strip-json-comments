@@ -1,31 +1,30 @@
 import test from 'ava';
 import Vinyl from 'vinyl';
-import m from '.';
+import pEvent from 'p-event';
+import stripJsonComments from '.';
 
-test.cb('strips JSON comments', t => {
-	const stream = m();
-
-	stream.on('data', file => {
-		t.is(file.contents.toString(), '         \n{"a":"b"}');
-		t.end();
-	});
+test('strips JSON comments', async t => {
+	const stream = stripJsonComments();
+	const dataPromise = pEvent(stream, 'data');
 
 	stream.end(new Vinyl({
 		contents: Buffer.from('//comment\n{"a":"b"}')
 	}));
+
+	const file = await dataPromise;
+	t.is(file.contents.toString(), '         \n{"a":"b"}');
 });
 
-test.cb('strips JSON comments and whitespace with options', t => {
+test('strips JSON comments and whitespace with options', async t => {
 	const options = {whitespace: false};
-	const stream = m(options);
-
-	stream.on('data', file => {
-		t.is(file.contents.toString(), '\n{"a":"b"}');
-		t.end();
-	});
+	const stream = stripJsonComments(options);
+	const dataPromise = pEvent(stream, 'data');
 
 	stream.end(new Vinyl({
 		contents: Buffer.from('//comment   \n{"a":"b"}')
 	}));
+
+	const file = await dataPromise;
+	t.is(file.contents.toString(), '\n{"a":"b"}');
 });
 

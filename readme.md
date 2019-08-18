@@ -17,7 +17,7 @@ $ npm install --save-dev gulp-strip-json-comments
 const gulp = require('gulp');
 const stripJsonComments = require('gulp-strip-json-comments');
 
-gulp.task('default', () =>
+exports.default = () => (
 	gulp.src('src/config.json')
 		.pipe(stripJsonComments())
 		.pipe(gulp.dest('dist'))
@@ -27,15 +27,10 @@ gulp.task('default', () =>
 
 ## API
 
-### stripJsonComments([options])
+### stripJsonComments(options?)
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 See the [`strip-json-comments` options](https://github.com/sindresorhus/strip-json-comments#options).
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
