@@ -1,4 +1,4 @@
-# gulp-strip-json-comments [![Build Status](https://travis-ci.org/sindresorhus/gulp-strip-json-comments.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-strip-json-comments)
+# gulp-strip-json-comments
 
 > Strip comments from JSON with [strip-json-comments](https://github.com/sindresorhus/strip-json-comments)<br>
 > Lets you use comments in your JSON files!
