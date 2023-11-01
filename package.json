@@ -4,13 +4,16 @@
 	"description": "Strip comments from JSON. Lets you use comments in your JSON files!",
 	"license": "MIT",
 	"repository": "sindresorhus/gulp-strip-json-comments",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=8"
+		"node": ">=18"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -36,15 +39,14 @@
 		"environment"
 	],
 	"dependencies": {
-		"plugin-error": "^1.0.1",
-		"strip-json-comments": "^3.0.1",
-		"through2": "^3.0.1"
+		"gulp-plugin-extras": "^0.2.2",
+		"strip-json-comments": "^5.0.1"
 	},
 	"devDependencies": {
-		"ava": "^2.3.0",
-		"p-event": "^4.1.0",
-		"vinyl": "^2.1.0",
-		"xo": "^0.24.0"
+		"ava": "^5.3.1",
+		"p-event": "^6.0.0",
+		"vinyl": "^3.0.0",
+		"xo": "^0.56.0"
 	},
 	"peerDependencies": {
 		"gulp": ">=4"

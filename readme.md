@@ -3,27 +3,24 @@
 > Strip comments from JSON with [strip-json-comments](https://github.com/sindresorhus/strip-json-comments)<br>
 > Lets you use comments in your JSON files!
 
-
 ## Install
 
+```sh
+npm install --save-dev gulp-strip-json-comments
 ```
-$ npm install --save-dev gulp-strip-json-comments
-```
-
 
 ## Usage
 
 ```js
-const gulp = require('gulp');
-const stripJsonComments = require('gulp-strip-json-comments');
+import gulp from 'gulp';
+import stripJsonComments from 'gulp-strip-json-comments';
 
-exports.default = () => (
+export default () => (
 	gulp.src('src/config.json')
 		.pipe(stripJsonComments())
 		.pipe(gulp.dest('dist'))
 );
 ```
-
 
 ## API
 

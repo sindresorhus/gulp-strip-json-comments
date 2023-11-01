@@ -1,26 +1,10 @@
-'use strict';
-const through = require('through2');
-const stripJsonComments = require('strip-json-comments');
-const PluginError = require('plugin-error');
+import {Buffer} from 'node:buffer';
+import stripJsonComments from 'strip-json-comments';
+import {gulpPlugin} from 'gulp-plugin-extras';
 
-module.exports = options => {
-	return through.obj(function (file, encoding, callback) {
-		if (file.isNull()) {
-			callback(null, file);
-		}
-
-		if (file.isStream()) {
-			callback(new PluginError('gulp-strip-json-comments', 'Streaming not supported'));
-			return;
-		}
-
-		try {
-			file.contents = Buffer.from(stripJsonComments(file.contents.toString(), options));
-			this.push(file);
-		} catch (error) {
-			this.emit('error', new PluginError('gulp-strip-json-comments', error, {fileName: file.path}));
-		}
-
-		callback();
+export default function gulpStripJsonComments(options) {
+	return gulpPlugin('gulp-strip-json-comments', file => {
+		file.contents = Buffer.from(stripJsonComments(file.contents.toString(), options));
+		return file;
 	});
-};
+}
